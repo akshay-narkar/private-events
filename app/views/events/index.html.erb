@@ -1,0 +1,23 @@
+<!-- <p><%= link_to 'Sign Up', new_user_path %> | <%= link_to 'login', new_session_path%> </p> -->
+
+<h1>All Events</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th style='padding-left:25px'>Event</th>
+            <th style='padding-left:25px'>Creator</th>
+            <th style='padding-left:25px'>Link</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @events.each do |x| %>
+        <tr>
+            <td><%= truncate(x.description,length:50) %></td>
+            <td style='padding-left:25px'><%= x.creator_id %></td>
+            <td style='padding-left:25px'><%= link_to 'Show', x %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PrivateEvents</title>
+
+<head>
+    <title>Pvtevent</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
+<body>
+
+    <h1><%=link_to "EventBrite Creator",root_path %></h1>
+    <p>Create Your Own Events</p>
+
+    <%if session[:user_id].nil?%>
+    <p><%= link_to 'Sign Up', new_user_path %> | <%= link_to 'login', new_session_path%> | <%=link_to 'Create Event', new_session_path%> </p>
+
+
+    <%else%>
+
+    <% @x = User.find_by_id(session[:user_id]) %>
+    <%= render plain: "Welcome "%> <%= link_to @x.name,@x %> | <%= link_to 'Logout', session_path("x"), method: :delete%> | <%=link_to 'Create Event', new_event_path%>
+
+    <%
+=begin%>
+    <%= render :plain : session[:username]  | <%= link_to 'Logout', sessions_path[:id], method: :destroy%> </p>
+    <%
+=end%>
+
+    <%end%>
+
     <%= yield %>
-  </body>
+</body>
+
 </html>

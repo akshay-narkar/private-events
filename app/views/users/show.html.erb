@@ -1,0 +1,21 @@
+<p><%= @user.name %> | <%=@user.email%> </p>
+
+<h1> Events Created </h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Link</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @events.each do |x| %>
+        <tr>
+            <td><%= x.description %></td>
+            <td><%= link_to 'Show', x %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
