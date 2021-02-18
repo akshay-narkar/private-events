@@ -1,21 +1,55 @@
-<p><%= @user.name %> | <%=@user.email%> </p>
+<p>Name: <%= @user.name %> </p>
 
-<h1> Events Created </h1>
+<h1> Events Attended </h1>
+
 
 <table>
     <thead>
         <tr>
-            <th>Event</th>
-            <th>Link</th>
+
+            <p>
+                <th style='padding-bottom: 15px'>Upcoming Events</th>
+            </p>
         </tr>
     </thead>
 
     <tbody>
+
+
         <% @events.each do |x| %>
+        <% if ((Event.find_by_id(x.attended_event_id)).eventdate - Date.today > 0) %>
         <tr>
-            <td><%= x.description %></td>
-            <td><%= link_to 'Show', x %></td>
+
+            <td> <%=  (Event.find_by_id(x.attended_event_id)).description%> </td>
         </tr>
-        <% end %>
+        <%end%>
+
+        <%end%>
+    </tbody>
+</table>
+<br>
+<hr>
+<br>
+
+<table>
+    <thead>
+        <tr>
+            <th <th style='padding-bottom: 15px'>Past Events</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+
+
+        <% @events.each do |x| %>
+        <% if ((Event.find_by_id(x.attended_event_id)).eventdate  - Date.today <= 0) %>
+        <tr>
+            <td> <%=  (Event.find_by_id(x.attended_event_id)).description%> </td>
+        </tr>
+
+        <%end%>
+
+        <%end%>
     </tbody>
 </table>

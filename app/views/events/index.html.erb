@@ -1,23 +1,66 @@
-<!-- <p><%= link_to 'Sign Up', new_user_path %> | <%= link_to 'login', new_session_path%> </p> -->
-
 <h1>All Events</h1>
 
+<h3> Upcoming Events </h3>
 <table>
     <thead>
         <tr>
             <th style='padding-left:25px'>Event</th>
-            <th style='padding-left:25px'>Creator</th>
+            <th style='padding-left:25px'>Date</th>
+                        <th style='padding-left:25px'>Creator</th>
+
             <th style='padding-left:25px'>Link</th>
+            <th style='padding-left:25px'>Attend Event</th>
+
         </tr>
     </thead>
 
     <tbody>
-        <% @events.each do |x| %>
+        <% @eventsupcoming.each do |x| %>
         <tr>
             <td><%= truncate(x.description,length:50) %></td>
-            <td style='padding-left:25px'><%= x.creator_id %></td>
+            <td style='padding-left:25px'><%= x.eventdate.strftime(' %d-%m-%Y') %>
+                        <td style='padding-left:25px'><%= (User.find_by_id(x.creator_id)).name %></td>
+
+            <td style='padding-left:25px'><%= link_to 'Show', x %></td>
+            <%if session[:user_id].nil?%>
+            <td style='padding-left:25px'><%= link_to '<button type="button">Attend</button>'.html_safe, new_session_path  %></td>
+            <%else%>
+            <td style='padding-left:25px'><%= link_to '<button type="button">Attend</button>'.html_safe, attendances_path(attendee_id: session[:user_id],attended_event_id: x.id),method: :create  %> </td>
+            <%end%>
+        </tr>
+
+
+        <% end %>
+    </tbody>
+</table>
+
+
+
+
+<h3> Past Events </h3>
+<table>
+    <thead>
+        <tr>
+            <th style='padding-left:25px'>Event</th>
+                       <th style='padding-left:25px'>Date</th>
+ 
+            <th style='padding-left:25px'>Creator</th>
+            <th style='padding-left:25px'>Link</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @eventspast.each do |x| %>
+        <tr>
+            <td><%= truncate(x.description,length:50) %></td>
+                        <td style='padding-left:25px'><%= x.eventdate.strftime(' %d-%m-%Y') %>
+
+            <td style='padding-left:25px'><%= (User.find_by_id(x.creator_id)).name %></td>
             <td style='padding-left:25px'><%= link_to 'Show', x %></td>
         </tr>
+
+
         <% end %>
     </tbody>
 </table>

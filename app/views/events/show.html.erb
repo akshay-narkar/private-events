@@ -1,3 +1,18 @@
- <h1><%= @event.description %> </h1>
+ <h2><%= @event.description %> </h2>
 
- <h3><%= "Hosted by: "%> <%=link_to (User.find_by_id(@event.creator_id)).name, user_path(@event[:creator_id])  %></h3>
+ <h4><%= "Hosted by: "%> <%=link_to (User.find_by_id(@event.creator_id)).name, user_path(@event[:creator_id])  %></h4>
+
+ <h5><%= "Event Date:"%><%= @event.eventdate.strftime(' %d-%m-%Y') %></h5>
+
+ <h5>List of Attendees:</h5>
+ <table>
+     <thead>
+
+     <tbody>
+         <% @attended.each do |x| %>
+         <tr>
+             <%= (User.find_by_id(x.attendee_id)).name %>
+         </tr>
+         <%end%>
+     </tbody>
+ </table>
