@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Members Only
+# Private Events
 
-### Build a webapp using Rails to restrict certain features for users that are logged in
+### Build a webapp using Rails to create Events and replicate the Eventbrite website's functionality
 
 #### Without logging in
 
