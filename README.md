@@ -6,19 +6,19 @@
 
 #### Without logging in
 
-> ![screenshot](/membersonly.png)
+> ![screenshot](membersonly.png)
 
 #### Sign Up
 
-> ![screenshot](/signup.png)
+> ![screenshot](sign_up.png)
 
 #### Login
 
-> ![screenshot](/login.png)
+> ![screenshot](login.png)
 
 #### When logged in
 
-> ![screenshot](/members.png)
+> ![screenshot](member.png)
 
 ## Built With
 
@@ -38,8 +38,8 @@ To get a local copy up and running follow these simple example steps:
 
 - Fork this project
 - Open your terminal
-- Clone this project `git clone git@github.com:akshay-narkar/members-only.git`
-- Go to the project folder `cd members-only`
+- Clone this project `https://github.com/ggotora/private-events.git`
+- Go to the project folder `cd private-events`
 
 ### Install
 
