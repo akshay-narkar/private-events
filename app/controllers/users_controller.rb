@@ -7,15 +7,16 @@ class UsersController < ApplicationController
     @user = User.new(params_new)
 
     if @user.save
-      redirect_to user_path(@user[:id])
+      redirect_to user_path(@user[:id]), notice: 'Successfully created your account. Login to create event'
     else
-      render :new
+      redirect_to new_user_path, notice: 'Failed to create account. Try again'
     end
   end
 
   def show
     @user = User.find(params[:id])
     @events = @user.attendances.all
+    @eventcreate = @user.events.all
   end
 
   private
