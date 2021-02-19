@@ -1,0 +1,9 @@
+<% @events.each do |x| %>
+  <% if ((Event.find_by_id(x.attended_event_id)).eventdate - Date.today > 0) %>
+    <tr>
+
+        <td> <%=  (Event.find_by_id(x.attended_event_id)).description%> </td>
+    </tr>
+  <%end%>
+
+<%end%>

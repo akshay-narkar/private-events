@@ -14,17 +14,7 @@
     </thead>
 
     <tbody>
-
-
-        <% @events.each do |x| %>
-        <% if ((Event.find_by_id(x.attended_event_id)).eventdate - Date.today > 0) %>
-        <tr>
-
-            <td> <%=  (Event.find_by_id(x.attended_event_id)).description%> </td>
-        </tr>
-        <%end%>
-
-        <%end%>
+        <%= render 'upcoming_events' %>
     </tbody>
 </table>
 <br>
@@ -34,22 +24,11 @@
 <table>
     <thead>
         <tr>
-            <th <th style='padding-bottom: 15px'>Past Events</th>
+            <th style='padding-bottom: 15px'>Past Events</th>
         </tr>
     </thead>
 
     <tbody>
-
-
-
-        <% @events.each do |x| %>
-        <% if ((Event.find_by_id(x.attended_event_id)).eventdate  - Date.today <= 0) %>
-        <tr>
-            <td> <%=  (Event.find_by_id(x.attended_event_id)).description%> </td>
-        </tr>
-
-        <%end%>
-
-        <%end%>
+        <%= render 'past_events' %>
     </tbody>
 </table>

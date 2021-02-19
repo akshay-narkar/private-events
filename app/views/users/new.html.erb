@@ -4,22 +4,22 @@
 <%= form_for :@user123 , url: users_path do |x| %>
 <p>
     Username:
-    <%= x.text_field :username%>
+    <%= x.text_field :username, class: "form-control" %>
 </p>
 <p>
     Name:
-    <%= x.text_field :name%>
+    <%= x.text_field :name, class: "form-control" %>
 </p>
 <p>
     Email:
-    <%= x.text_field :email%>
+    <%= x.text_field :email, class: "form-control" %>
 </p>
 
 <p>
     Password:
-    <%= x.password_field :password%>
+    <%= x.password_field :password, class: "form-control" %>
 </p>
 <p>
-    <%= x.submit 'Save' %>
+    <%= x.submit 'Save', class: "btn btn-primary" %>
 </p>
 <% end %>
