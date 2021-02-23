@@ -3,8 +3,8 @@ describe 'Session authentication', type: :system do
     User.create(username: 'michaels')
   end
 
-  feature 'Login as a new user' do
-    scenario 'they are on login page and try to login in and succeeds' do
+  context 'Login as a new user' do
+    it 'they are on login page and try to login in and succeeds' do
       visit new_session_path
 
       fill_in '_userlogin_username', with: 'michaels'
@@ -14,8 +14,8 @@ describe 'Session authentication', type: :system do
     end
   end
 
-  feature 'Create a new user' do
-    scenario 'they are on login page and try to login in and login fails' do
+  context 'Create a new user' do
+    it 'they are on login page and try to login in and login fails' do
       visit new_session_path
 
       fill_in '_userlogin_username', with: 'akshay'
@@ -25,8 +25,8 @@ describe 'Session authentication', type: :system do
     end
   end
 
-  feature 'Login and logout a new user' do
-    scenario 'they are on login page and try to login in and login fails' do
+  context 'Login and logout a new user' do
+    it 'they are on login page and try to login in and login fails' do
       visit new_session_path
 
       fill_in '_userlogin_username', with: 'michaels'

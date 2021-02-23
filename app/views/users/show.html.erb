@@ -28,7 +28,10 @@
     </thead>
 
     <tbody>
-        <%= render 'upcoming_events' %>
+    <tbody>
+        <% @events.each do |x| %>
+        <%=upcoming_events(x)%>
+        <%end%>
     </tbody>
 </table>
 <br>
@@ -43,6 +46,9 @@
     </thead>
 
     <tbody>
-        <%= render 'past_events' %>
+        <% @events.each do |x| %>
+        <%=past_events(x) %>
+        <%end%>
+
     </tbody>
 </table>

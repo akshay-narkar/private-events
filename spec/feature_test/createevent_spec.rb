@@ -6,14 +6,15 @@ describe 'Event Management', type: :system do
     reset_session!
   end
 
-  feature 'Create event without login' do
-    scenario 'they try to create event without logging in' do
+  context 'Create event without login' do
+    it 'they try to create event without logging in' do
       visit new_event_path
       expect(page).to have_content('Login')
     end
   end
-  feature 'Login as a new user' do
-    scenario 'they are on login page and try to login in and succeeds and can create a new event' do
+
+  context 'Login as a new user' do
+    it 'they are on login page and try to login in and succeeds and can create a new event' do
       visit new_session_path
       fill_in '_userlogin_username', with: 'michaels'
       click_button 'Login'
