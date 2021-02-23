@@ -49,8 +49,8 @@ To get a local copy up and running follow these simple example steps:
 
 ### Run tests
 
-- Start rails server using `rails s`
-- Use the browser to open localhost and with the interface check the functionality
+- Run `rails generate rspec:install`
+- Run `rspec`
 
 ## Authors
 

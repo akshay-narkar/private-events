@@ -1,0 +1,24 @@
+<h1>Create event</h1>
+
+
+<%= simple_form_for :@event123 , url: events_path do |x| %>
+<%= x.error_notification %>
+<p>
+    <%= x.input :description,
+                required: true,
+                autofocus: true
+                
+                %>
+</p>
+
+<p>
+    <%=x.label :Date%>
+    <%= x.date_field :eventdate %>
+
+</p>
+
+<p>
+    <%= x.submit "Create" %>
+</p>
+
+<% end %>
