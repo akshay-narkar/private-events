@@ -15,4 +15,15 @@ module EventsHelper
       render 'redirectpage'
     end
   end
+
+  def allevents(variable)
+    if session[:user_id].nil?
+      render 'usernil'
+    elsif session[:user_id] != variable.creator_id
+      render partial: 'usernocreator', locals: { variable1: variable }
+
+    else
+      render 'useriscreator'
+    end
+  end
 end
