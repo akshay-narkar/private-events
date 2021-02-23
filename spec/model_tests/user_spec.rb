@@ -2,9 +2,6 @@ require 'rails_helper'
 
 describe User, type: :model do
   let(:user) { User.create(username: 'user') }
-  #   let(:evt) { Event.create(description: 'Test description', eventdate: Date.current) }
-  #   subject { User.new(name: 'user1') }
-  #   subject { Attendance.new(attendee: user, attended_event: evt) }
 
   context 'Associations' do
     it { should have_many(:events).class_name('Event').with_foreign_key('creator_id') }

@@ -9,8 +9,6 @@ describe 'Event Management', type: :system do
   feature 'Create event without login' do
     scenario 'they try to create event without logging in' do
       visit new_event_path
-      #   fill_in '_userlogin_username', with: 'michaels'
-      #   click_button 'Login'
       expect(page).to have_content('Login')
     end
   end

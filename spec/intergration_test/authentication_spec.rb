@@ -32,7 +32,6 @@ describe 'Session authentication', type: :system do
       fill_in '_userlogin_username', with: 'michaels'
       click_button 'Login'
       click_link 'Logout'
-      #   find(:xpath, '/html/body/nav/div/div/div/div/a[2]', text: 'Logout').click
       expect(page).to have_content('All Events')
     end
   end

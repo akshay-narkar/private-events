@@ -16,7 +16,6 @@ class SessionsController < ApplicationController
   def index; end
 
   def destroy
-    #    session[:user_id] = nil
     reset_session
     redirect_to root_path, notice: 'Successfully Logged Out'
   end
