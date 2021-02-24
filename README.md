@@ -6,19 +6,21 @@
 
 #### Without logging in
 
-> ![screenshot](membersonly.png)
+> > ![screenshot](membersonly.png)
 
 #### Sign Up
 
-> ![screenshot](sign_up.png)
+> > ![screenshot](sign_up.png)
 
 #### Login
 
-> ![screenshot](login.png)
+> > ![screenshot](login.png)
 
 #### When logged in
 
-> ![screenshot](member.png)
+> > ![screenshot](member.png)
+
+> > ![screenshot](member1.png)
 
 ## Built With
 
